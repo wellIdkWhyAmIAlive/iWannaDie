@@ -1,0 +1,366 @@
+@font-face {
+    src: url("https://www.axis-praxis.org/fonts/webfonts/MetaVariableDemo-Set.woff2") format("woff2");
+    font-family: "Meta";
+    font-style: normal;
+    font-weight: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins';
+}
+
+*::selection {
+    background-color: white;
+    color: black;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    color: white;
+}
+
+#page1 {
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    border: none;
+}
+
+#center {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    padding: 2vw;
+    flex-direction: row;
+    justify-content: space-around;
+    text-align: center;
+}
+
+#page1 #center {
+    height: 100vh;
+    width: 100%;
+    font-size: 6vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    word-spacing: 1vw;
+    line-height: 10vw;
+    overflow: hidden;
+    font-weight: 700;
+}
+
+#page1 #center h1 {
+    transition: opacity 0.5s ease;
+}
+
+#zoomed-h1 {
+    transform: scale(1);
+    /* Initial scale for the zoomed h1 element */
+}
+
+#page1 #center h1:nth-Child(2n+1) {
+    z-index: -9;
+    color: transparent;
+    -webkit-text-stroke: white 2px;
+}
+
+#page1 #center h1:nth-Child(1) {
+    -webkit-text-stroke: aqua 2px;
+}
+
+#page1 #center h1:nth-Child(3) {
+    -webkit-text-stroke: white 2px;
+}
+
+#page1 #center h1:nth-Child(2) {
+    z-index: -1;
+}
+
+#right {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 2vw;
+    justify-content: center;
+    align-items: center;
+}
+
+#page2 {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    border: none;
+}
+
+#left {
+    width: 100%;
+    padding-left: 6vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    font-size: 4vw;
+    line-height: 7.5vw;
+    /* background-color: aqua; */
+}
+
+#page2 #right {
+    opacity: 0;
+}
+
+#page2 #left {
+    scale: 1.5;
+}
+
+#page3 {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    border: none;
+}
+
+#page3 #right img {
+    width: 45vw;
+    border-radius: 3vw;
+    padding-top: 1vw;
+    transition: all ease-in-out 0.3s;
+}
+
+#page3 #right img:hover {
+    scale: 1.05;
+}
+
+#gooey {
+    height: 18vw;
+    width: 18vw;
+    position: absolute;
+    border-radius: 50%;
+    background: linear-gradient(to top, #0afef2, #007bff);
+    top: -5%;
+    right: -10%;
+    filter: blur(15px);
+    animation-name: gooey;
+    animation-duration: 5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes gooey {
+    from {
+        transform: translate(10%, -10%) skew(0);
+    }
+    to {
+        transform: translate(-10%, 10%) skew(10deg);
+    }
+}
+
+#page3 #left p {
+    line-height: normal;
+    font-size: 1.7vw;
+    text-align: left;
+}
+
+#page4 {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    border: none;
+}
+
+#page5 {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    border: none;
+}
+
+#page6 {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    border: none;
+}
+
+#page7 {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    border: none;
+}
+
+#page8 {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    border: none;
+}
+
+#page9 {
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    border: none;
+}
+
+#page9 #center #left span {
+    font-size: 2vw;
+    font-weight: bold;
+    font-family: 'meta';
+}
+
+#right video {
+    height: 40vw;
+    border-radius: 1vw;
+    border: none;
+    transition: all 0.3s ease;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.14);
+}
+
+#right video:hover {
+    scale: 1.05;
+}
+
+#button-div button {
+    /* background-color: rgb(28, 26, 26); */
+    height: 70px;
+    width: 150px;
+    margin: 30px 100px;
+    font-size: 2rem;
+    font-weight: 300;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: 5px 5px 10px rgb(0, 0, 0, 0.14);
+    transition: all ease-in-out 0.3s;
+}
+
+#Yes:hover {
+    background-color: red;
+    transform: scale(1.05);
+    color: black;
+}
+
+#No:hover {
+    transform: scale(1.05);
+    background-color: #0afef2;
+    color: black;
+}
+
+#button-div button:active {
+    background-color: black;
+    color: white;
+}
+
+#right-2 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 2vw;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5vw;
+}
+
+#page7 #center #right-2 #button-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+#page9 #center #left {
+    padding-left: 0;
+}
+
+#page9 #center #left img {
+    padding-top: 0;
+    border-radius: 1.6vw;
+    height: 30vw;
+    transition: all ease-in 0.3s;
+}
+
+#page9 #center #left img:hover {
+    scale: 1.05;
+}
+
+#sideways-text {
+    font-size: 10vw;
+    line-height: 3vw;
+    align-items: center;
+    transform: rotate(-90deg);
+    transform-origin: left bottom;
+    white-space: nowrap;
+    position: absolute;
+    left: 5vw;
+    top: 50vw;
+    -webkit-text-stroke: white 3px;
+    color: transparent;
+}
+
+#page10 {
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    border: none;
+}
+
+#page10 #center #left img {
+    border-radius: 1.5vw;
+    height: 30vw;
+}
+
+#page8 img {
+    border-radius: 1.5vw;
+    height: 30vw;
+    transition: all ease 0.3s;
+}
+
+#page8 img:hover {
+    scale: 1.05;
+}
+
+#page10 #center #left {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 2vw;
+    font-size: 2vw;
+    text-align: left;
+    line-height: 2.5vw;
+}
+
+#page10 img {
+    transition: all ease 0.4s;
+}
+
+#page10 img:hover {
+    scale: 1.05;
+}
+
+#page11 {
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+}
+
+#page9 #center #left #right {
+    display: flex;
+    flex-direction: row;
+    gap: 1.8vw;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#text-div {
+    font-size: 1.5vw;
+    line-height: 1.8vw;
+    width: 40%;
+    text-align: left;
+}
