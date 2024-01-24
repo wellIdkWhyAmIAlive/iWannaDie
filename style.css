@@ -364,3 +364,66 @@ body {
     width: 40%;
     text-align: left;
 }
+
+#longDay {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+}
+
+#longDay img {
+    object-fit: contain;
+    height: 30vw;
+    /* width: 30vw; */
+    border-radius: 1.5vw;
+}
+
+#images {
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+}
+
+#images #center {
+    /* gap: 2vw; */
+    justify-content: space-evenly;
+}
+
+#images #center img,
+#images #center video {
+    height: 75vh;
+    border-radius: 1vw;
+    transition: all ease 0.3s;
+}
+
+#top-right {
+    font-size: 0.5vw;
+    width: 18vw;
+    padding: 1vw;
+    position: absolute;
+    bottom: 0;
+}
+
+#page2 #top-right {
+    font-size: 0.5vw;
+    width: 18vw;
+    padding: 1vw;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+#images #center img:hover,
+#images #center video:hover {
+    scale: 1.05;
+}
+
+#page11 {
+    height: 100vw;
+    width: 100%;
+    position: relative;
+}
+
+#page6 #center #left span {
+    color: red;
+}
