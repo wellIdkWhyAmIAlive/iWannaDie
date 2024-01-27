@@ -42,6 +42,16 @@ body {
     text-align: center;
 }
 
+.center {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    padding: 2vw;
+    flex-direction: row;
+    justify-content: space-around;
+    text-align: center;
+}
+
 #page1 #center {
     height: 100vh;
     width: 100%;
@@ -316,13 +326,13 @@ body {
     height: 30vw;
 }
 
-#page8 img {
+#UnknownPage img {
     border-radius: 1.5vw;
     height: 30vw;
     transition: all ease 0.3s;
 }
 
-#page8 img:hover {
+#UnknownPage img:hover {
     scale: 1.05;
 }
 
@@ -424,6 +434,50 @@ body {
     position: relative;
 }
 
+#page6 #center #left {
+    padding-left: 0;
+    /* text-align: center; */
+    /* justify-content: center; */
+    align-items: center;
+}
+
 #page6 #center #left span {
     color: red;
+}
+
+#page6 #left h1:nth-child(2) {
+    opacity: 0;
+}
+
+#page6 #left h1:nth-child(3) {
+    opacity: 0;
+}
+
+.tilt-container {
+    perspective: 1000px;
+}
+
+#tilt-element {
+    display: flex;
+    transform-style: preserve-3d;
+    transition: transform 0.3s ease-out;
+}
+
+#UnknownPage {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+}
+
+.tElem {
+    padding: 5vw;
+    border-radius: 50%;
+    font-size: 2vw;
+    background-color: rgb(173, 207, 214);
+    transition: all 0.5s ease;
+}
+
+.tElem:hover {
+    background-color: rgb(97, 136, 198);
+    scale: 1.2;
 }

@@ -96,13 +96,51 @@ var tl3 = gsap.timeline({
 })
 
 tl3.to("#page3 #right", {
-    xPercent: -80,
+    opacity: 0,
     scale: 0.5
-})
+}, "animation")
 tl3.to("#page3 #left", {
-    xPercent: -100,
+    xPercent: -55,
     scale: 1.25,
-});
+    textAlign: "center"
+}, "animation");
+
+var tl4 = gsap.timeline({
+    scrollTrigger: {
+        trigger: "#page6",
+        scroller: "#main",
+        start: "5% 0%",
+        pin: true,
+        // pinSpacing: false,
+        end: "+=4000",
+        // markers: true,
+        scrub: 1.5
+    }
+})
+
+gsap.set("#page6 #center #left h1:nth-child(1)", {
+    xPercent: 0,
+    yPercent: 140,
+})
+gsap.set("#page6 #center #left h1:nth-child(3)", {
+    xPercent: 0,
+    yPercent: -240,
+})
+
+
+tl4.to("#page6 #center #left h1:nth-child(1)", {
+    opacity: 0,
+})
+tl4.to("#page6 #center #left h1:nth-child(2)", {
+    opacity: 1,
+})
+tl4.to("#page6 #center #left h1:nth-child(2)", {
+    opacity: 0,
+})
+tl4.to("#page6 #center #left h1:nth-child(3)", {
+    opacity: 1,
+})
+
 
 let video = document.getElementById('myVideo');
 let page8 = document.getElementById('page5');
@@ -178,4 +216,28 @@ button2.addEventListener('click', function() {
     button2.style.display = "none";
     image.style.display = "none";
 
+});
+
+const tiltContainer = document.querySelector('.tilt-container');
+const tiltElement = document.getElementById('tilt-element');
+
+let mouseX = 0;
+let mouseY = 0;
+
+tiltContainer.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX / window.innerWidth - 0.5;
+    mouseY = -(e.clientY / window.innerHeight - 0.5);
+
+    updateTilt();
+});
+
+function updateTilt() {
+    const tiltX = mouseY * 20; // Adjust the tilt angle based on your preference
+    const tiltY = mouseX * 20; // Adjust the tilt angle based on your preference
+
+    tiltElement.style.transform = `rotateX(${tiltX}deg) rotateY(${tiltY}deg)`;
+}
+
+tiltContainer.addEventListener('mouseleave', () => {
+    tiltElement.style.transform = 'rotateX(0deg) rotateY(0deg)';
 });
