@@ -1,12 +1,3 @@
-function disableRight() {
-    document.addEventListener('contextmenu', function(event) {
-        event.preventDefault();
-    })
-}
-
-disableRight()
-
-
 gsap.registerPlugin(ScrollTrigger);
 
 // Using Locomotive Scroll from Locomotive https://github.com/locomotivemtl/locomotive-scroll
@@ -89,25 +80,29 @@ tl2.to("#page2 #left", {
         opacity: 1,
     }, "someLabel");
 
+
+
 var tl3 = gsap.timeline({
     scrollTrigger: {
-        trigger: "#page6",
+        trigger: "#page3",
         scroller: "#main",
         start: "5% 0%",
         pin: true,
         // pinSpacing: false,
-        end: "+=1000",
+        end: "+=2000",
         // markers: true,
         scrub: 1.5
     }
 })
 
-tl3.to("#page6 #center #left h1", {
-    scale: 1.1,
+tl3.to("#page3 #right", {
+    xPercent: -80,
+    scale: 0.5
 })
-tl3.to("#page6 #center #left span", {
-    color: lime,
-})
+tl3.to("#page3 #left", {
+    xPercent: -100,
+    scale: 1.25,
+});
 
 let video = document.getElementById('myVideo');
 let page8 = document.getElementById('page5');
@@ -149,45 +144,6 @@ window.addEventListener('load', () => {
     }
 });
 
-let video1 = document.getElementById('zhainaVid');
-let page = document.getElementById('images');
-
-let isVideoPlaying1 = false;
-
-let options1 = {
-    root: null,
-    rootMargin: '0px',
-    threshold: 0.5
-};
-
-let observer1 = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            // Video is in view
-            if (!isVideoPlaying1) {
-                video1.play();
-                isVideoPlaying1 = true;
-            }
-        } else {
-            // Video is out of view
-            if (isVideoPlaying1) {
-                video1.pause();
-                isVideoPlaying1 = false;
-            }
-        }
-    });
-}, options1);
-
-observer1.observe(page);
-
-window.addEventListener('load', () => {
-    let pageRect = page.getBoundingClientRect();
-    if (pageRect.bottom > 0 && pageRect.top < window.innerHeight) {
-        video1.play();
-        isVideoPlaying1 = true;
-    }
-});
-
 
 var texts = [
     "kya ho gya yr zaina",
@@ -222,4 +178,4 @@ button2.addEventListener('click', function() {
     button2.style.display = "none";
     image.style.display = "none";
 
-})
+});
